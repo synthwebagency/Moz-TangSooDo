@@ -1,0 +1,12 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Exclude images but keep the folder
+public/images/*
+!public/images/.gitkeep
