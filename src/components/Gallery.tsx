@@ -1,12 +1,18 @@
 import { motion } from "motion/react";
 
 const images = [
-  "/images/gallery.pics-1.jpg",
-  "/images/gallery.pics-2.jpg",
-  "/images/gallery.pics-3.jpg",
-  "/images/gallery.pics-4.jpg",
-  "/images/gallery.pics-5.jpg",
-  "/images/gallery.pics-6.jpg",
+  "/images/gal-1.jpg",
+  "/images/gal-2.jpg",
+  "/images/gal-3.jpg",
+  "/images/gal-4.jpg",
+  "/images/gal-5.jpg",
+  "/images/gal-6.jpg",
+  "/images/gal-7.jpg",
+  "/images/gal-8.jpg",
+  "/images/gal-9.jpg",
+  "/images/gal-10.jpg",
+  "/images/gal-11.jpg",
+  "/images/gal-12.jpg",
 ];
 
 export default function Gallery() {
@@ -20,7 +26,7 @@ export default function Gallery() {
             viewport={{ once: true }}
             className="text-sm font-bold text-orange-500 uppercase tracking-[0.3em] mb-4"
           >
-            Galeria de Fotos
+            Galeria de Elite
           </motion.h2>
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
@@ -33,23 +39,26 @@ export default function Gallery() {
           </motion.h3>
         </div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
           {images.map((src, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 * i }}
-              className="group relative rounded-[40px] overflow-hidden border border-white/10 hover:border-orange-500/50 transition-all duration-500"
+              transition={{ delay: (i % 3) * 0.1 }}
+              className="group relative rounded-[32px] overflow-hidden border border-white/10 hover:border-orange-500/50 transition-all duration-500 break-inside-avoid shadow-2xl"
             >
               <img
                 src={src}
                 alt={`Gallery ${i + 1}`}
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                className="w-full h-auto object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                loading="lazy"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                <span className="text-white font-bold uppercase text-[10px] tracking-[0.3em]">MozTangSooDo Elite</span>
+              </div>
             </motion.div>
           ))}
         </div>

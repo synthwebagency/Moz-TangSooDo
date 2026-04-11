@@ -38,7 +38,7 @@ export default function Programs() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PROGRAMS.map((program, i) => {
-            const isSmaller = program.id === "manutencao-fisica" || program.id === "check-up-geral";
+            const isSmaller = program.id === "check-up-geral";
             
             return (
               <motion.div

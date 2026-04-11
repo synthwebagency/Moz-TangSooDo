@@ -131,18 +131,18 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="relative aspect-video rounded-[40px] overflow-hidden border border-white/10 group">
-              <img
-                src="https://picsum.photos/seed/map-placeholder/800/450"
-                alt="Mapa de Localização"
-                className="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="p-6 bg-orange-500 rounded-full text-black shadow-[0_0_50px_rgba(249,115,22,0.5)] group-hover:scale-110 transition-transform">
-                  <MapPin className="w-10 h-10" />
-                </div>
-              </div>
+            <div className="relative aspect-video rounded-[40px] overflow-hidden border border-white/10 group shadow-2xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3589.65487654321!2d32.6100!3d-25.8900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee6900000000000%3A0x0!2zTW96VGFuZ1Nvb0Rv!5e0!3m2!1spt-PT!2smz!4v1712580000000!5m2!1spt-PT!2smz"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: 'grayscale(1) contrast(1.2) invert(0.9)' }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+              ></iframe>
+              <div className="absolute inset-0 pointer-events-none border-[20px] border-black/20 rounded-[40px]"></div>
             </div>
           </motion.div>
         </div>

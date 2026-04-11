@@ -73,8 +73,32 @@ export const KIDS_BENEFITS = [
   { title: "Saúde e Fitness", description: "Combate ao sedentarismo de forma divertida." },
 ];
 
+export const SENSEIS = [
+  {
+    name: "John Doe",
+    role: "Instrutor Principal",
+    description: "Instrutor dedicado com vasta experiência em artes marciais. Focado no desenvolvimento técnico e disciplina dos alunos.",
+    image: "/images/sensei-john.jpg",
+  },
+  {
+    name: "Jane Doe",
+    role: "Especialista em Treino Físico",
+    description: "Especialista em treino físico e desenvolvimento pessoal. Inspira confiança, foco e crescimento interior.",
+    image: "/images/sensei-jane.jpg",
+  },
+];
+
+export const SHINGOULE_TEXT = {
+  intro: "Aqui está o que é ShinGoule® Kigong:",
+  title: "O que é ShinGoule®kigong?",
+  content1: "ShinGoule®kigong — um caminho espiritual marcial que une o corpo ao universo através do movimento contínuo. Inspirado na tradição, iluminado pela prática do Tang Soo Do, Kigong Coreano e elevado pela presença dos mestres e a força interior.",
+  content2: "ShinGoule®kigong é mais do que uma técnica: é um despertar para percorrer de forma sequenciada filosofia, prática, espiritualidade e missão de vida. Esta é uma arte para todos os que buscam transcender o físico, e tocar o infinito dentro de si.",
+  quote: "“A natureza do infinito completa a fonte do Homem com a qual ele precisa e deve viver em harmonia de acordo as Leis da mesma”.",
+  author: "ShinGoule",
+};
+
 export const CONTACT_INFO = {
-  address: "1933, Malhazine, Avenida Maria Lurdes Mutola, Maputo",
+  address: "MozTangSooDo, 1933, Malhazine Avenida Maria Lurdes Mutola, Cidade de Maputo, 1270, MZ",
   phones: ["+258 84 5236 276", "+258 87 9000 728", "+258 84 3631 339"],
   email: "moztangsoodo@gmail.com",
   hours: {

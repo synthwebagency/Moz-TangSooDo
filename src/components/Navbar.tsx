@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -63,28 +63,49 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-black border-b border-orange-500/20 px-4 py-6 space-y-4"
-        >
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-[60] bg-black md:hidden flex flex-col items-center justify-center p-8"
+          >
+            <button
               onClick={() => setIsOpen(false)}
-              className="block text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors uppercase tracking-widest"
+              className="absolute top-8 right-8 p-4 bg-white/5 rounded-full text-orange-500 hover:bg-white/10 transition-colors"
             >
-              {link.name}
-            </a>
-          ))}
-          <button className="w-full py-3 bg-orange-500 text-black font-bold rounded-xl uppercase tracking-widest">
-            Inscreva-se Agora
-          </button>
-        </motion.div>
-      )}
+              <X className="w-8 h-8" />
+            </button>
+
+            <div className="flex flex-col items-center gap-8 w-full">
+              {navLinks.map((link, i) => (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * i }}
+                  onClick={() => setIsOpen(false)}
+                  className="text-3xl font-black text-white hover:text-orange-500 transition-colors uppercase tracking-tighter"
+                >
+                  {link.name}
+                </motion.a>
+              ))}
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * navLinks.length }}
+                className="mt-8 w-full py-6 bg-orange-500 text-black font-black rounded-2xl uppercase tracking-[0.2em] text-sm shadow-[0_0_50px_rgba(249,115,22,0.3)]"
+              >
+                Inscreva-se Agora
+              </motion.button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
