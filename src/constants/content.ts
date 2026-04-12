@@ -75,15 +75,15 @@ export const KIDS_BENEFITS = [
 
 export const SENSEIS = [
   {
-    name: "John Doe",
+    name: "Mestre Alex Bacela Goule",
     role: "Instrutor Principal",
-    description: "Instrutor dedicado com vasta experiência em artes marciais. Focado no desenvolvimento técnico e disciplina dos alunos.",
+    description: " Mestre Sénior Internacional, 5º Dan, com mais de 43 anos de experiência. Especializado em formas de defesa pessoal, combate e fisioterapia, acupressão e manipulação de energia.",
     image: "/images/sensei-john.jpg",
   },
   {
-    name: "Jane Doe",
+    name: "Mestra Isaura O.Mutombene",
     role: "Especialista em Treino Físico",
-    description: "Especialista em treino físico e desenvolvimento pessoal. Inspira confiança, foco e crescimento interior.",
+    description: "Especialista no treino de crianças e adolescentes.",
     image: "/images/sensei-jane.jpg",
   },
 ];
