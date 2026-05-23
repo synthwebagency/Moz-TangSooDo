@@ -151,7 +151,7 @@ export default function ProgramDetail() {
                 <img
                   src={program.image}
                   alt={program.title}
-                  className={`w-full h-full grayscale hover:grayscale-0 transition-all duration-700 ${program.id === 'check-up-geral' ? 'object-contain' : 'object-cover'}`}
+                  className={`w-full h-full transition-all duration-700 ${program.id === 'check-up-geral' ? 'object-contain' : 'object-cover'}`}
                   referrerPolicy="no-referrer"
                 />
               </div>

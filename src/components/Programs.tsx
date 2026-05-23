@@ -53,7 +53,7 @@ export default function Programs() {
                   <img
                     src={program.image}
                     alt={program.title}
-                    className={`w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ${isSmaller ? 'object-contain' : 'object-cover'}`}
+                    className={`w-full h-full group-hover:scale-110 transition-all duration-700 ${isSmaller ? 'object-contain' : 'object-cover'}`}
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none" />

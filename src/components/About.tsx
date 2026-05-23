@@ -23,7 +23,7 @@ export default function About() {
               <img
                 src="/images/about-academy.jpg"
                 alt="Mester Alex Goule"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute top-0 left-0 p-8">
