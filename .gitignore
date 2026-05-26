@@ -10,3 +10,18 @@ coverage/
 # Exclude images but keep the folder
 public/images/*
 !public/images/.gitkeep
+
+# Global media ignores to prevent any images or videos from being shared to GitHub
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+*.webp
+*.mp4
+*.webm
+*.ogg
+*.mov
+*.xlsx
+*.zip
+*.tar.gz

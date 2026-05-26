@@ -24,6 +24,18 @@ const galleryItems: GalleryItem[] = [
   { type: "image", src: "/images/gal-15.jpg" },
   { type: "image", src: "/images/gal-16.jpg" },
   { type: "image", src: "/images/gal-17.jpg" },
+  { type: "video", src: "/images/event-video-1.mp4" },
+  { type: "image", src: "/images/event-1.jpg" },
+  { type: "image", src: "/images/event-2.jpg" },
+  { type: "video", src: "/images/event-video-2.mp4" },
+  { type: "image", src: "/images/event-3.jpg" },
+  { type: "image", src: "/images/event-4.jpg" },
+  { type: "image", src: "/images/event-5.jpg" },
+  { type: "video", src: "/images/event-video-3.mp4" },
+  { type: "image", src: "/images/event-6.jpg" },
+  { type: "image", src: "/images/event-7.jpg" },
+  { type: "image", src: "/images/event-8.jpg" },
+  { type: "image", src: "/images/event-9.jpg" },
 ];
 
 export default function Gallery() {

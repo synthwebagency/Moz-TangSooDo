@@ -6,6 +6,7 @@ import Benefits from "../components/Benefits";
 import Kids from "../components/Kids";
 import Gallery from "../components/Gallery";
 import Contact from "../components/Contact";
+import EventPopup from "../components/EventPopup";
 import { motion } from "motion/react";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       transition={{ duration: 0.5 }}
       className="bg-black"
     >
+      <EventPopup />
       <Hero />
       <About />
       
