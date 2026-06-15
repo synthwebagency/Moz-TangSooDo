@@ -1,4 +1,5 @@
 import Hero from "../components/Hero";
+import BookPromo from "../components/BookPromo";
 import About from "../components/About";
 import Programs from "../components/Programs";
 import Senseis from "../components/Senseis";
@@ -19,6 +20,7 @@ export default function Home() {
     >
       <EventPopup />
       <Hero />
+      <BookPromo />
       <About />
       
       {/* Nota Importante Section */}
