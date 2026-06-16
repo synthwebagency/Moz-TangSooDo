@@ -1,1 +1,1 @@
-# Keep this directory in git even if empty
+# Keep this directory tracked in git without tracking its ignored image contents

@@ -9,25 +9,23 @@ interface MediaItem {
   title: string;
 }
 
-// Exactly 12 items: 9 images, 3 videos (All in Portuguese as requested)
+// Exactly 9 image placeholders (All with Gaza and Inhambane province themes)
 const eventMediaItems: MediaItem[] = [
-  { id: 1, type: "video", src: "/images/event-video-1.mp4", title: "Combate & Sparring de Elite" },
-  { id: 2, type: "image", src: "/images/event-1.jpg", title: "Cerimónia de Abertura" },
-  { id: 3, type: "image", src: "/images/event-2.jpg", title: "Demonstração de Formas" },
-  { id: 4, type: "video", src: "/images/event-video-2.mp4", title: "Kigong Coreano Coletivo" },
-  { id: 5, type: "image", src: "/images/event-3.jpg", title: "Combate Infantil" },
-  { id: 6, type: "image", src: "/images/event-4.jpg", title: "Pódio de Medalha de Ouro" },
-  { id: 7, type: "image", src: "/images/event-5.jpg", title: "Cerimónia de Graduação" },
-  { id: 8, type: "video", src: "/images/event-video-3.mp4", title: "Técnica Especial de Pontapés" },
-  { id: 9, type: "image", src: "/images/event-6.jpg", title: "União do Dojo" },
-  { id: 10, type: "image", src: "/images/event-7.jpg", title: "Foco & Determinação" },
-  { id: 11, type: "image", src: "/images/event-8.jpg", title: "Mestre & Aluno" },
-  { id: 12, type: "image", src: "/images/event-9.jpg", title: "Medalhistas Finais" },
+  { id: 1, type: "image", src: "/images/gaza-inhambane-1.jpg", title: "Cerimónia de Abertura" },
+  { id: 2, type: "image", src: "/images/gaza-inhambane-2.jpg", title: "Demonstração de Formas (Hyung)" },
+  { id: 3, type: "image", src: "/images/gaza-inhambane-3.jpg", title: "Combate / Sparring Gaza" },
+  { id: 4, type: "image", src: "/images/gaza-inhambane-4.jpg", title: "Atletas de Inhambane" },
+  { id: 5, type: "image", src: "/images/gaza-inhambane-5.jpg", title: "Técnica de Chutos Altos" },
+  { id: 6, type: "image", src: "/images/gaza-inhambane-6.jpg", title: "Defesa Pessoal Prática" },
+  { id: 7, type: "image", src: "/images/gaza-inhambane-7.jpg", title: "Entrega de Medalhas" },
+  { id: 8, type: "image", src: "/images/gaza-inhambane-8.jpg", title: "Graduação de Cintos" },
+  { id: 9, type: "image", src: "/images/gaza-inhambane-9.jpg", title: "Foto de Grupo Final" },
 ];
 
 export default function EventPopup() {
   const [isOpen, setIsOpen] = useState(false);
   const [loadedMedia, setLoadedMedia] = useState<Record<number, boolean>>({});
+  const [mediaErrors, setMediaErrors] = useState<Record<number, boolean>>({});
 
   // Automatically open the pop-up on page load
   useEffect(() => {
@@ -99,10 +97,10 @@ export default function EventPopup() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
-                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-500 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-4"
+                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-500 text-[10.5px] sm:text-xs font-bold uppercase tracking-[0.15em] mb-4 text-center justify-center max-w-full"
                 >
-                  <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-                  Campeonato Provincial de Maputo 2026
+                  <Sparkles className="w-3.5 h-3.5 animate-pulse shrink-0" />
+                  <span>Campeonato de qualificação provínciais de Gaza e Inhambane</span>
                 </motion.div>
 
                 <motion.h2
@@ -123,12 +121,12 @@ export default function EventPopup() {
                 >
                   <div className="flex items-center gap-1.5">
                     <Calendar className="w-4 h-4 text-orange-500" />
-                    <span>23 de Maio de 2026</span>
+                    <span>Sábado, 13 de Junho de 2026</span>
                   </div>
                   <div className="w-1.5 h-1.5 rounded-full bg-white/20 hidden sm:block" />
                   <div className="flex items-center gap-1.5">
                     <MapPin className="w-4 h-4 text-orange-500" />
-                    <span>Província de Maputo, Moçambique</span>
+                    <span>Moçambique</span>
                   </div>
                 </motion.div>
               </div>
@@ -137,71 +135,69 @@ export default function EventPopup() {
               <div className="mb-4">
                 <h4 className="text-[10px] sm:text-xs font-bold text-orange-500 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
                   <Film className="w-3.5 h-3.5 animate-pulse" />
-                  Galeria do Evento e Vídeos de Destaque
+                  Galeria de Qualificação Regional (9 Imagens)
                 </h4>
                 
                 {/* Horizontal scroll container suited for mobile touch/swipe */}
                 <div className="flex gap-4 overflow-x-auto pb-4 pt-1 snap-x scrollbar-thin scrollbar-thumb-orange-500/40 scrollbar-track-white/5 -webkit-overflow-scrolling-touch touch-pan-x overscroll-x-contain">
-                  {eventMediaItems.map((item) => (
-                    <div
-                      key={item.id}
-                      className="flex-none w-[240px] sm:w-[280px] md:w-[300px] snap-start bg-[#121212] border border-white/10 hover:border-orange-500/50 rounded-2xl overflow-hidden group/item relative transition-all duration-300 shadow-lg"
-                    >
-                      <div className="aspect-video relative overflow-hidden bg-black flex items-center justify-center">
-                        
-                        {/* Interactive Play/Image Badge */}
-                        <div className="absolute top-3 right-3 z-10 px-2 py-1 rounded bg-black/80 backdrop-blur-md border border-white/10 text-[10px] font-bold uppercase tracking-wider text-orange-500 flex items-center gap-1">
-                          {item.type === "video" ? (
-                            <>
-                              <Play className="w-2.5 h-2.5 fill-current" />
-                              Vídeo
-                            </>
-                          ) : (
-                            <>
-                              <ImageIcon className="w-2.5 h-2.5" />
-                              Foto
-                            </>
-                          )}
-                        </div>
+                  {eventMediaItems.map((item) => {
+                    const hasError = mediaErrors[item.id];
+                    const isLoaded = loadedMedia[item.id];
 
-                        {/* Skeleton Shimmer loader when image/video hasn't loaded */}
-                        {!loadedMedia[item.id] && (
-                          <div className="absolute inset-0 bg-[#161616] flex flex-col items-center justify-center p-4 text-center">
-                            <div className="w-8 h-8 rounded-full border-2 border-orange-500/30 border-t-orange-500 animate-spin mb-2" />
-                            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">
-                              A carregar...
-                            </span>
+                    return (
+                      <div
+                        key={item.id}
+                        className="flex-none w-[240px] sm:w-[280px] md:w-[300px] snap-start bg-[#121212] border border-white/10 hover:border-orange-500/50 rounded-2xl overflow-hidden group/item relative transition-all duration-300 shadow-lg"
+                      >
+                        <div className="aspect-video relative overflow-hidden bg-black flex items-center justify-center">
+                          
+                          {/* Image Badge */}
+                          <div className="absolute top-3 right-3 z-10 px-2 py-1 rounded bg-black/80 backdrop-blur-md border border-white/10 text-[10px] font-bold uppercase tracking-wider text-orange-500 flex items-center gap-1">
+                            <ImageIcon className="w-2.5 h-2.5" />
+                            Foto
                           </div>
-                        )}
 
-                        {/* Real video if matches */}
-                        {item.type === "video" ? (
-                          <video
-                            src={item.src}
-                            className="w-full h-full object-cover group-hover/item:scale-105 transition-all duration-500"
-                            loop
-                            muted
-                            autoPlay
-                            playsInline
-                            onLoadedData={() => setLoadedMedia(prev => ({ ...prev, [item.id]: true }))}
-                            onError={() => setLoadedMedia(prev => ({ ...prev, [item.id]: true }))}
-                          />
-                        ) : (
-                          <img
-                            src={item.src}
-                            alt={item.title}
-                            className="w-full h-full object-cover group-hover/item:scale-105 transition-all duration-500"
-                            loading="lazy"
-                            onLoad={() => setLoadedMedia(prev => ({ ...prev, [item.id]: true }))}
-                            onError={() => setLoadedMedia(prev => ({ ...prev, [item.id]: true }))}
-                          />
-                        )}
+                          {/* Skeleton Shimmer loader when image hasn't loaded */}
+                          {!isLoaded && !hasError && (
+                            <div className="absolute inset-0 bg-[#161616] flex flex-col items-center justify-center p-4 text-center">
+                              <div className="w-8 h-8 rounded-full border-2 border-orange-500/30 border-t-orange-500 animate-spin mb-2" />
+                              <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">
+                                A carregar...
+                              </span>
+                            </div>
+                          )}
 
-                        {/* Transparent Gradient Protection overlay */}
-                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+                          {hasError ? (
+                            <div className="absolute inset-0 bg-[#0d0d0d] border border-orange-500/10 rounded-2xl flex flex-col items-center justify-center p-3 text-center">
+                              <ImageIcon className="w-7 h-7 text-orange-500/30 mb-1.5" />
+                              <p className="text-white font-black text-[11px] uppercase tracking-wide px-1 line-clamp-1">{item.title}</p>
+                              <div className="mt-2 w-full px-2">
+                                <p className="text-[8.5px] text-gray-500 lowercase">carregar ficheiro como:</p>
+                                <code className="block text-[9.5px] text-orange-400 font-mono bg-black/80 px-1.5 py-1 rounded mt-1 border border-white/5 select-all truncate">
+                                  {item.src.split('/').pop()}
+                                </code>
+                              </div>
+                            </div>
+                          ) : (
+                            <img
+                              src={item.src}
+                              alt={item.title}
+                              className="w-full h-full object-cover group-hover/item:scale-105 transition-all duration-500"
+                              loading="lazy"
+                              onLoad={() => setLoadedMedia(prev => ({ ...prev, [item.id]: true }))}
+                              onError={() => {
+                                setLoadedMedia(prev => ({ ...prev, [item.id]: true }));
+                                setMediaErrors(prev => ({ ...prev, [item.id]: true }));
+                              }}
+                            />
+                          )}
+
+                          {/* Transparent Gradient Protection overlay */}
+                          {!hasError && <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
 
